@@ -1,6 +1,6 @@
 package com.design.exam.exam3_strategy.impl;
 
-import com.edu.java.design.mode.strategy.IStrategy;
+import com.design.exam.exam3_strategy.IStrategy;
 
 /**
  * Created by garychen on 2018/4/9.

@@ -1,9 +1,10 @@
 package com.design.exam.exam3_strategy;
 
-import com.edu.java.design.mode.strategy.impl.AddStrategy;
-import com.edu.java.design.mode.strategy.impl.DivStrategy;
-import com.edu.java.design.mode.strategy.impl.MulStrategy;
-import com.edu.java.design.mode.strategy.impl.SubStrategy;
+
+import com.design.exam.exam3_strategy.impl.AddStrategy;
+import com.design.exam.exam3_strategy.impl.DivStrategy;
+import com.design.exam.exam3_strategy.impl.MulStrategy;
+import com.design.exam.exam3_strategy.impl.SubStrategy;
 
 /**
  * Created by garychen on 2018/4/9.
