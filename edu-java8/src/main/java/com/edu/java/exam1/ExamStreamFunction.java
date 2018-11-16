@@ -133,6 +133,7 @@ public class ExamStreamFunction {
                         .reduce(Integer::min);
         System.out.println(t8.get());
 
+        System.out.println("(8)交易中交易金额最小的对象");
         Optional<Transaction> t9 =
                 transactions.stream().min(comparing(Transaction::getValue));
         System.out.println(t9.get());
