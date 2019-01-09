@@ -1,8 +1,7 @@
 @startuml
 autonumber
 
-mit --> cif: 商户申请操作成功后,异步调用发送通知接口.
-cif -> DB:
+a -> b
 
 
 @enduml
