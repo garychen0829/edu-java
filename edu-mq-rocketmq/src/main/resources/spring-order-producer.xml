@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="orderMessageQueueSelector" class="com.edu.java.demo4.producer.OrderMessageQueueSelector"></bean>
+
+    <bean id="producer" class="com.edu.java.demo4.producer.OrderProduct" init-method="init" destroy-method="destory">
+        <constructor-arg name="nameServerAddr" value="localhost:9876"></constructor-arg>
+        <constructor-arg name="producerGroupName" value="ch_producer_group"></constructor-arg>
+    </bean>
+
+</beans>

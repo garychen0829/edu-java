@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class ProductDemo {
     public static void main(String[] args) throws MQClientException, UnsupportedEncodingException, RemotingException, InterruptedException, MQBrokerException {
-        DefaultMQProducer producer = new DefaultMQProducer("ch_product_group");
+        DefaultMQProducer producer = new DefaultMQProducer("ch_mq_group");
         producer.setNamesrvAddr("localhost:9876");
         producer.start();
 
