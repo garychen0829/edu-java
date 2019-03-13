@@ -1,5 +1,6 @@
 package com.edu.java.demo4;
 
+import com.alibaba.fastjson.JSONObject;
 import com.edu.java.demo4.producer.OrderMessage;
 import com.edu.java.demo4.producer.OrderMessageQueueSelector;
 import com.edu.java.demo4.producer.OrderProduct;
@@ -40,8 +41,8 @@ public class OrderProductTest {
                 orderMessage.setContent("hello orderly rocketMQ message!");
                 String messageContent = orderMessage.toString();
 
-                Message sendMessage = new Message(topicName, statusNames[i], orderId + "#" + statusNames[i], messageContent.getBytes(RemotingHelper.DEFAULT_CHARSET));
-
+                Message sendMessage = new Message(topicName, statusNames[i], orderId + " # " + statusNames[i], messageContent.getBytes(RemotingHelper.DEFAULT_CHARSET));
+                System.out.println(JSONObject.toJSONString(sendMessage));
                 SendResult sendResult = product.getProducer().send(sendMessage, messageQueueSelector, orderId);
                 System.out.printf("%s %n", sendResult);
 

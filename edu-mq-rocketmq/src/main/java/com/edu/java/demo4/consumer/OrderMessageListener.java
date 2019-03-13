@@ -24,22 +24,32 @@ public class OrderMessageListener implements MessageListenerConcurrently {
     @Override
     public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
         String curtime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        if(null != msgs){
+        if (null != msgs) {
             try {
                 System.out.println(curtime + " > 接收到消息: ");
                 Thread.sleep(new Random().nextInt(1000));
-            }catch (Exception e) {
+
+
+                for (MessageExt ext : msgs) {
+                    try {
+                        System.out.println(curtime + ">>>" + new String(ext.getBody(), "UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+//            msgs.stream()
+//                    .forEach(m -> {
+//                        try {
+//                            System.out.println(curtime + ">>>" + new String(ext.getBody(), "UTF-8"));
+//                        } catch (UnsupportedEncodingException e) {
+//                            e.printStackTrace();
+//                        }
+//                    });
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            msgs.stream()
-                    .forEach(m -> {
-                        try {
-                            System.out.println(new String(m.getBody(),"UTF-8"));
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-                    });
 
         }
         return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
