@@ -17,7 +17,6 @@ import java.util.List;
  * @author hui2.chen
  * @date 2019/3/12
  */
-@Slf4j
 public class MessageListener implements MessageListenerConcurrently {
     @Override
     public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
