@@ -13,14 +13,16 @@ import com.edu.proxy.UserDao;
  */
 public class TestMain {
     public static void main(String[] args) {
-        IUserDao target = new UserDao();
+        Target target = new Target();
 
         System.out.println(target.getClass());
 
-        IUserDao proxy = (IUserDao) new ProxyFactory(target).getProxyInstance();
+        TargetInterface proxy = (TargetInterface) new ProxyFactory(target).getProxyInstance();
 
         System.out.println(proxy.getClass());
 
-        proxy.save();
+        proxy.method1();
+        proxy.method2();
+        proxy.method3(4);
     }
 }

@@ -20,7 +20,7 @@ public class ProxyFactory {
     }
 
     public Object getProxyInstance() {
-        Object obj = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new InvocationHandler() {
+        TargetInterface obj = (TargetInterface)Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 System.out.println("开始事务2");
