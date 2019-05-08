@@ -52,7 +52,7 @@ public class TestExcelReader {
             System.out.println("总金额sumMoney: " + sumMoney);
             System.out.println("总本金: " + money5);
             System.out.println("总利息: " + money6);
-            System.out.println(stopWatch.getTotalTimeSeconds());
+            System.out.println("时间:" + stopWatch.getTotalTimeSeconds());
         }catch (Exception e){
         }finally {
             if (null != wk) {
