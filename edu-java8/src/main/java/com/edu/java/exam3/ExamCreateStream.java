@@ -56,7 +56,7 @@ public class ExamCreateStream {
                     .count();
             System.out.println(uniqueWords);
         } catch (IOException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
 
         System.out.println("============================");
