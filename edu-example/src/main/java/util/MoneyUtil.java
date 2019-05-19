@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * Created by sc48226 on 18/4/23.
+ * 金额工具类
  */
 public final class MoneyUtil {
 
