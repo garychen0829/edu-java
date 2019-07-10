@@ -1,6 +1,7 @@
 package com.excel;
 
 import com.monitorjbl.xlsx.StreamingReader;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -69,5 +70,9 @@ public class TestExcelReader {
 //        System.gc();
 //        Thread.sleep(Integer.MAX_VALUE);
 
+    }
+
+    private String getCellValue(Cell cell) {
+        return cell.getStringCellValue();
     }
 }
