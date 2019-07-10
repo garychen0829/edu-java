@@ -22,7 +22,7 @@ public class Target implements TargetInterface {
 
     @Override
     public int method3(int x) {
-        System.out.println("方法3");
+        System.out.println("方法3: " + x);
         return x;
     }
 }

@@ -15,7 +15,7 @@ public class TestMain {
     public static void main(String[] args) {
         Target target = new Target();
 
-        System.out.println(target.getClass());
+        System.out.println(target.getClass().getName());
 
         TargetInterface proxy = (TargetInterface) new ProxyFactory(target).getProxyInstance();
 
