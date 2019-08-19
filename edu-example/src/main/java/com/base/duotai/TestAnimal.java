@@ -23,6 +23,8 @@ public class TestAnimal {
     }
 
     public static void main(String[] args) {
+        String ss = "2019-01-01 11:11:11";
+        System.out.println(ss.subSequence(0,10));
         TestAnimal animal = new TestAnimal();
 //        animal.invoke("咪咪");
 //        animal.invoke("咪咪");
