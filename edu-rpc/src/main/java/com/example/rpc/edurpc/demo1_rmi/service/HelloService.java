@@ -1,4 +1,4 @@
-package com.example.rpc.edurpc.demo1_rpc.service;
+package com.example.rpc.edurpc.demo1_rmi.service;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

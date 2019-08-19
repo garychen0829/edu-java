@@ -1,6 +1,6 @@
-package com.example.rpc.edurpc.demo1_rpc.client;
+package com.example.rpc.edurpc.demo1_rmi.client;
 
-import com.example.rpc.edurpc.demo1_rpc.service.HelloService;
+import com.example.rpc.edurpc.demo1_rmi.service.HelloService;
 
 import java.rmi.Naming;
 
