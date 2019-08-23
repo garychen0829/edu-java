@@ -15,5 +15,6 @@ public class RpcProviderMain {
     public static void main(String[] args) throws IOException {
         HelloService service = new HelloServiceImpl();
         ProviderReflect.provider(service, 8803);
+        System.out.println("provider main started.");
     }
 }

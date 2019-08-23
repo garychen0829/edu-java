@@ -17,6 +17,7 @@
         <module>edu-example</module>
         <module>edu-mq-rabbit</module>
         <module>edu-mq-rocketmq</module>
+        <module>edu-rpc</module>
     </modules>
 
     <dependencies>
@@ -54,7 +55,12 @@
             <scope>provided</scope>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

@@ -8,6 +8,8 @@
  */
 public class TestMain3 {
 
+    public static void gettime()  {}
+
     public static void main(String[] args) {
 
     }
