@@ -13,9 +13,9 @@ public class TestExam3 {
 
     public static void main(String[] args) {
         TestExam3 t = new TestExam3();
-        Product p1 = new Product();
-        Product p2 = new Product();
-        Product p3 = new Product();
+        final Product p1 = new Product();
+        final Product p2 = new Product();
+        final Product p3 = new Product();
 
         List<Product> list = new ArrayList<Product>() {{
             add(p1);
