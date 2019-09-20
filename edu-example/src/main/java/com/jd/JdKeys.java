@@ -1,0 +1,16 @@
+package com.jd;
+
+/**
+ * <pre>
+ * 描述
+ * </pre>
+ *
+ * @author hui2.chen
+ * @date 2019/9/2
+ */
+public class JdKeys {
+
+    public static final String jd_public_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCGgSz3yp/qb3+z9ASIYyb5nnS7A7gL1KCQ+ITKIXUfyeJEKb26aSr4bLwzttJWHkccaFR+lDF4wvGV7Zhs5QRqAV9iFmPebZctWALk0y3/XhERLgWlOtIkrdtWpvNSLhW0k7e2DgJaYB9PLeWAe8ZHkciTlW28JEuCKnO2l1IlnQIDAQAB";
+    public static final String tc_public_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgXUno3SkhXdtfZHxeJqyweeIcrapKKAMic16eaUOb2c/P+mcrqM2/DnCsF/t7T4Er3UrwqBuEkuuCxy/1OlCkDY01cP8K1HgnhX2JngMIdfKzsqFK92v0GPpeRdAjXSxJU3RqfzmZSsYQ1g0qLIO1fQJi5+K1VIx4C9dnWnWlpwIDAQAB";
+    public static final String tc_private_key = "MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAKBdSejdKSFd219kfF4mrLB54hytqkooAyJzXp5pQ5vZz8/6Zyuozb8OcKwX+3tPgSvdSvCoG4SS64LHL/U6UKQNjTVw/wrUeCeFfYmeAwh18rOyoUr3a/QY+l5F0CNdLElTdGp/OZlKxhDWDSosg7V9AmLn4rVUjHgL12dadaWnAgMBAAECgYAQ4aEtLVLuG0ZDpX1eH+4f6cS+xh1eDxY9Yy27uVMPrf8tYqvHsc5u5WNBColDstvjNTl1Wg0DiL/YFYXb59ajM7jOPaFnzZ31RmyYQvWxfVBkCtKUy/V8V9NYH2qdgcFko7KBzSlDOdVYOo5s6p6i2zQ/jnwpqoAUNdC2ZOaHoQJBANdrOsAzjgPf1Hgp/ej6jbi6IlhAu/4eDMQ9hpq7gC0fX+4i+DZ6NtKBojIFLLxpqS0EHN6xwmIQ5WOsMwTZA/cCQQC+kwIPBbEr9fxuN5QvHcMY4RgBe7KdC9efjn95Z3/1peN0kElxHhEgyQy4MWu3vAnxjXDK+TV+A4sETtG4BZ/RAkAoBNyqPimg4KEpHav07y8K5VFiEcya3dxDTKbH8hNSzqRUqhxwim3K15hZMIrqCbsLCNuQJ3fUHg1vYdssiGBrAkAXHiIrzFb3rDlY7WkOZh/ajsOoumaqYltfwZt5ELMXC26SH0apcCpHvdvLJEOa4DaclLnQBXcVuDxO43jRR+1hAkAmPUQb/4GUmMH2XDPlaDJRW8VcljcLZoHSoxCvmXau8yJ9iyO6FhZ0xdDBGBSS+0Pl8RsKxhe4qI0ZIuk8iJv9";
+}
