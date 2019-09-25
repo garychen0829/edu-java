@@ -9,6 +9,7 @@ public class ErrorLogger extends AbstractLogger {
         this.level = level;
     }
 
+    @Override
     protected void write(String message) {
         System.out.println("ErrorLogger Logger: " + message);
     }

@@ -178,6 +178,7 @@ public class Base64 extends BaseNCodec {
         return this.encodeTable == URL_SAFE_ENCODE_TABLE;
     }
 
+    @Override
     void encode(byte[] in, int inPos, int inAvail, Context context) {
         if (!context.eof) {
             if (inAvail < 0) {
@@ -244,6 +245,7 @@ public class Base64 extends BaseNCodec {
         }
     }
 
+    @Override
     void decode(byte[] in, int inPos, int inAvail, Context context) {
         if (!context.eof) {
             if (inAvail < 0) {
@@ -294,6 +296,7 @@ public class Base64 extends BaseNCodec {
         }
     }
 
+    @Override
     protected boolean isInAlphabet(byte octet) {
         return octet >= 0 && octet < this.decodeTable.length && this.decodeTable[octet] != -1;
     }

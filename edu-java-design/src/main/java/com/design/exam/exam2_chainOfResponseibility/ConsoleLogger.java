@@ -10,6 +10,7 @@ public class ConsoleLogger extends AbstractLogger{
         this.level = level;
     }
 
+    @Override
     protected void write(String message) {
         System.out.println("ConsoleLogger Logger: " + message);
     }

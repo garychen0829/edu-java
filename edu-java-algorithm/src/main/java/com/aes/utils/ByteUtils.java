@@ -135,15 +135,17 @@ public final class ByteUtils {
      */
     public static char getChar(byte[] b, int index) {
         int s = 0;
-        if (b[index + 1] > 0)
+        if (b[index + 1] > 0) {
             s += b[index + 1];
-        else
+        } else {
             s += 256 + b[index + 0];
+        }
         s *= 256;
-        if (b[index + 0] > 0)
+        if (b[index + 0] > 0) {
             s += b[index + 1];
-        else
+        } else {
             s += 256 + b[index + 0];
+        }
         char ch = (char) s;
         return ch;
     }
@@ -215,13 +217,13 @@ public final class ByteUtils {
         l |= ((long) b[2] << 16);
         l &= 0xffffff;
         l |= ((long) b[3] << 24);
-        l &= 0xffffffffl;
+        l &= 0xffffffffL;
         l |= ((long) b[4] << 32);
-        l &= 0xffffffffffl;
+        l &= 0xffffffffffL;
         l |= ((long) b[5] << 40);
-        l &= 0xffffffffffffl;
+        l &= 0xffffffffffffL;
         l |= ((long) b[6] << 48);
-        l &= 0xffffffffffffffl;
+        l &= 0xffffffffffffffL;
         l |= ((long) b[7] << 56);
         return Double.longBitsToDouble(l);
     }
