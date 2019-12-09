@@ -5,7 +5,6 @@ import com.edu.java.test1.vo.Dish;
 import org.junit.Test;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -17,6 +16,17 @@ import java.util.stream.Collectors;
  */
 public class TestStream {
     List<Dish> menu = Arrays.asList(
+            new Dish("pork", false, 800, Dish.Type.MEAT),
+            new Dish("beef", false, 700, Dish.Type.MEAT),
+            new Dish("chicken", false, 400, Dish.Type.MEAT),
+            new Dish("french fries", true, 530, Dish.Type.OTHER),
+            new Dish("rice", true, 350, Dish.Type.OTHER),
+            new Dish("season fruit", true, 120, Dish.Type.OTHER),
+            new Dish("pizza", true, 550, Dish.Type.OTHER),
+            new Dish("prawns", false, 300, Dish.Type.FISH),
+            new Dish("salmon", false, 450, Dish.Type.FISH));
+
+    List<Dish> menu2 = Arrays.asList(
             new Dish("pork", false, 800, Dish.Type.MEAT),
             new Dish("beef", false, 700, Dish.Type.MEAT),
             new Dish("chicken", false, 400, Dish.Type.MEAT),
@@ -103,10 +113,77 @@ public class TestStream {
 
     @Test
     public void test_Max_length() {
-//        menu.stream()
-//                .map(Dish::getName)
+        Optional<String> max = menu.stream()
+                .map(Dish::getName)
 //                .map(String::length)
-//                .max((o1,o2)->Comparator.comparingInt(o1,o2));
-//        System.out.println(JSON.toJSONString(collect));
+                .max(String::compareTo);
+        System.out.println(JSON.toJSONString(max));
+    }
+
+    @Test
+    public void test_TwoLists() {
+        List<TestBean> beans = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            TestBean bean = new TestBean();
+            bean.setKey("k" + i);
+            bean.setValue("v" + i);
+            beans.add(bean);
+        }
+
+        List<TestBean> objs = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            TestBean bean = new TestBean();
+            bean.setKey("b" + i);
+            bean.setValue("v" + i);
+            objs.add(bean);
+        }
+
+        beans.stream()
+                .forEach(i -> objs.stream()
+                        .forEach(j -> {
+                            if (i.getValue().equals(j.getValue())) {
+                                i.setKey(j.getKey());
+                            }
+                        })
+                );
+
+        System.out.println(beans);
+    }
+
+    @Test
+    public void testArraysMap() {
+        String[] arrays = {"hello world!"};
+
+        List<String[]> collect = Arrays.stream(arrays)
+                .map(i -> i.split(""))
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(JSON.toJSONString(collect));
+
+    }
+
+    @Test
+    public void testArraysFlatMap() {
+        String[] arrays = {"hello world!"};
+
+        List<String> collect = Arrays.stream(arrays)
+                .map(i -> i.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(JSON.toJSONString(collect));
+
+    }
+
+    @Test
+    public void testArrays() {
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3); List<Integer> numbers2 = Arrays.asList(3, 4); List<int[]> pairs =
+                numbers1.stream()
+                        .flatMap(i -> numbers2.stream()
+                                .map(j -> new int[]{i, j})
+                        )
+                        .collect(Collectors.toList());
     }
 }
