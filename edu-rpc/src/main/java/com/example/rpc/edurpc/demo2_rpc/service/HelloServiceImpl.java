@@ -11,7 +11,7 @@ package com.example.rpc.edurpc.demo2_rpc.service;
 public class HelloServiceImpl implements HelloService{
     @Override
     public String sayHello(String content) {
-
+        System.out.println("say Hello :" + content);
         return "hello: " + content;
     }
 }

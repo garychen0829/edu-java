@@ -1,4 +1,8 @@
-package com.example.rpc.edurpc.demo2_rpc.service;
+package com.example.rpc.edurpc.demo2_rpc;
+
+import com.example.rpc.edurpc.demo2_rpc.client.ProviderReflect;
+import com.example.rpc.edurpc.demo2_rpc.service.HelloService;
+import com.example.rpc.edurpc.demo2_rpc.service.HelloServiceImpl;
 
 import java.io.IOException;
 

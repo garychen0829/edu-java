@@ -1,4 +1,4 @@
-package com.example.rpc.edurpc.demo2_rpc.service;
+package com.example.rpc.edurpc.demo2_rpc.client;
 
 import org.apache.commons.lang3.reflect.MethodUtils;
 
@@ -11,6 +11,8 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static java.util.concurrent.Executors.*;
+
 /**
  * <pre>
  * 描述
@@ -20,7 +22,7 @@ import java.util.concurrent.Executors;
  * @date 2019/8/20
  */
 public class ProviderReflect {
-    private static final ExecutorService executorService = Executors.newCachedThreadPool();
+    private static final ExecutorService executorService = newCachedThreadPool();
 
     public static void provider(final Object service, int port) throws IOException {
         ServerSocket serverSocket = new ServerSocket(port);
