@@ -1,6 +1,7 @@
 package com.edu.java.test1;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.edu.java.test1.vo.Dish;
 import org.junit.Test;
 
@@ -179,11 +180,25 @@ public class TestStream {
 
     @Test
     public void testArrays() {
-        List<Integer> numbers1 = Arrays.asList(1, 2, 3); List<Integer> numbers2 = Arrays.asList(3, 4); List<int[]> pairs =
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3);
+        List<Integer> numbers2 = Arrays.asList(3, 4);
+        List<int[]> pairs =
                 numbers1.stream()
                         .flatMap(i -> numbers2.stream()
                                 .map(j -> new int[]{i, j})
                         )
                         .collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", "123456");
+
+        String str = String.valueOf(JSONObject.toJSON(map));
+        System.out.println(str);
+
+        System.out.println(JSONObject.toJSONString(JSONObject.parseObject("", Map.class)));
+
     }
 }
