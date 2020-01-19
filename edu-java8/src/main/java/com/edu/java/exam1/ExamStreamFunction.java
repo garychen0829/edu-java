@@ -121,7 +121,7 @@ public class ExamStreamFunction {
 
         Optional<Integer> t7 =
                 transactions.stream()
-                        .map(x->x.getValue())
+                        .map(x -> x.getValue())
                         .reduce(Integer::max);
         System.out.println(t7.get());
 
@@ -129,7 +129,7 @@ public class ExamStreamFunction {
         System.out.println("(8)交易中交易金额最小的");
         Optional<Integer> t8 =
                 transactions.stream()
-                        .map(x->x.getValue())
+                        .map(x -> x.getValue())
                         .reduce(Integer::min);
         System.out.println(t8.get());
 

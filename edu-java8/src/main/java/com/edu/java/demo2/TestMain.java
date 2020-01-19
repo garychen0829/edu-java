@@ -27,16 +27,16 @@ public class TestMain {
         //元素序列
 
         List<String> threeHighCaloricDishNames =
-        menu.stream()
-                .filter(d->d.getCalories() > 300)
-                .map(Dish::getName)
-                .limit(3)
-                .collect(Collectors.toList());
+                menu.stream()
+                        .filter(d -> d.getCalories() > 300)
+                        .map(Dish::getName)
+                        .limit(3)
+                        .collect(Collectors.toList());
         System.out.println(threeHighCaloricDishNames);
 
 
         long count = menu.stream()
-                .filter(d->d.getCalories() > 300)
+                .filter(d -> d.getCalories() > 300)
                 .distinct()
                 .limit(3)
                 .count();

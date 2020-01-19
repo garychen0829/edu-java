@@ -12,7 +12,8 @@ public class Dish {
     private final int calories;
     private final Type type;
 
-    public Dish(String name, boolean vegetarian, int calories, Type type) { this.name = name;
+    public Dish(String name, boolean vegetarian, int calories, Type type) {
+        this.name = name;
         this.vegetarian = vegetarian;
         this.calories = calories;
         this.type = type;
@@ -45,5 +46,5 @@ public class Dish {
         return sb.toString();
     }
 
-    public enum Type { MEAT, FISH, OTHER }
+    public enum Type {MEAT, FISH, OTHER}
 }

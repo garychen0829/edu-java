@@ -12,7 +12,8 @@ package com.edu.java.exam1;
 public class Trader {
     private final String name;
     private final String city;
-    public Trader(String n, String c){
+
+    public Trader(String n, String c) {
         this.name = n;
         this.city = c;
     }

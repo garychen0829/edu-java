@@ -18,10 +18,10 @@ import static java.util.Comparator.comparing;
  */
 public class Demo01 {
     public static void main(String[] args) {
-        Person p1 = new Person("张三",23);
-        Person p2 = new Person("李四",24);
-        Person p3 = new Person("王五",25);
-        Person p4 = new Person("赵六",26);
+        Person p1 = new Person("张三", 23);
+        Person p2 = new Person("李四", 24);
+        Person p3 = new Person("王五", 25);
+        Person p4 = new Person("赵六", 26);
 
         List<Person> people = new ArrayList<>();
         people.add(p1);
@@ -30,10 +30,10 @@ public class Demo01 {
         people.add(p4);
 
 
-        Person pa = new Person("张三a",23);
-        Person pb = new Person("李四b",24);
-        Person pc = new Person("王五c",25);
-        Person pd = new Person("赵六d",26);
+        Person pa = new Person("张三a", 23);
+        Person pb = new Person("李四b", 24);
+        Person pc = new Person("王五c", 25);
+        Person pd = new Person("赵六d", 26);
 
         List<Person> peopleEn = new ArrayList<>();
         peopleEn.add(pa);
@@ -42,8 +42,8 @@ public class Demo01 {
         peopleEn.add(pd);
 
         Map<String, List<Person>> listMap = new HashMap<>();
-        listMap.put("1",people);
-        listMap.put("2",peopleEn);
+        listMap.put("1", people);
+        listMap.put("2", peopleEn);
 
 
         //筛选people集合中的数据
@@ -72,7 +72,7 @@ public class Demo01 {
         filterPerson2(people, new SimpleFormatter());
 
         //方法四 Lambda表达式
-        filterPerson(people, (Person p)-> "张三".equals(p.getName()));
+        filterPerson(people, (Person p) -> "张三".equals(p.getName()));
 
 
         //五: 真实的例子 Runnable()
@@ -85,7 +85,7 @@ public class Demo01 {
 //        t.start();
 
         //
-        Thread t = new Thread(()-> System.out.println("hello runnable ."));
+        Thread t = new Thread(() -> System.out.println("hello runnable ."));
         t.start();
         //由此-> 引入Lambda表达式的引入...
 
@@ -98,7 +98,7 @@ public class Demo01 {
 
         //stream 初探.
         List<String> names = people.stream()
-                .filter(p->p.getAge()<25)
+                .filter(p -> p.getAge() < 25)
                 .sorted(comparing(Person::getAge))
                 .map(Person::getName)
                 .collect(Collectors.toList());
@@ -107,7 +107,7 @@ public class Demo01 {
 
         //利用多核架构并行执行这段代码,只需要把stream()换成parallelStream().
         List<String> names2 = people.parallelStream()
-                .filter(p->p.getAge()<25)
+                .filter(p -> p.getAge() < 25)
                 .sorted(comparing(Person::getAge))
                 .map(Person::getName)
                 .collect(Collectors.toList());
@@ -124,14 +124,15 @@ public class Demo01 {
 
     /**
      * 方法二
+     *
      * @param people
      * @param iFilterCond
      * @return
      */
-    public static List<Person> filterPerson(List<Person> people, IFilterCond iFilterCond){
+    public static List<Person> filterPerson(List<Person> people, IFilterCond iFilterCond) {
         List<Person> result = new ArrayList<>();
         for (Person person : people) {
-            if (iFilterCond.test(person)){
+            if (iFilterCond.test(person)) {
                 result.add(person);
             }
         }

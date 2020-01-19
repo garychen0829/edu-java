@@ -31,7 +31,7 @@ public class ExamStream2 {
         System.out.println("打印100以内的偶数: ");
         IntStream evenNumber =
                 IntStream.rangeClosed(1, 100)
-                    .filter(x -> x % 2 == 0);
+                        .filter(x -> x % 2 == 0);
         System.out.println(evenNumber.count());
 
         System.out.println("==============================");

@@ -87,16 +87,16 @@ public class TestMain_StreamUsing {
         System.out.println(items);
         System.out.println("-------------------");
 
-        String[] strs = new String[]{"Hello","World"};
-        List<String> items2= Arrays.asList(strs);
+        String[] strs = new String[]{"Hello", "World"};
+        List<String> items2 = Arrays.asList(strs);
         items2.stream()
-                .map(x->x.split(""))
+                .map(x -> x.split(""))
                 .distinct()
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
         items2.stream()
-                .map(x->x.split(""))
+                .map(x -> x.split(""))
                 .flatMap(Arrays::stream)
                 .distinct()
                 .collect(Collectors.toList())
@@ -105,7 +105,7 @@ public class TestMain_StreamUsing {
         System.out.println("===================");
 
         items2.stream()
-                .map(x->x.split(""))
+                .map(x -> x.split(""))
                 .distinct()
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
@@ -114,7 +114,7 @@ public class TestMain_StreamUsing {
 
         List<Integer> numbers2 = Arrays.asList(1, 2, 3, 4, 5);
         numbers2.stream()
-                .map(x-> x * x)
+                .map(x -> x * x)
                 .forEach(System.out::println);
         System.out.println("===================");
 
@@ -130,7 +130,7 @@ public class TestMain_StreamUsing {
 
         System.out.println("===================");
 
-        if(menu.stream().anyMatch(Dish::isVegetarian)){
+        if (menu.stream().anyMatch(Dish::isVegetarian)) {
             System.out.println("The menu is (somewhat) vegetarian friendly!");
         }
 
@@ -147,7 +147,7 @@ public class TestMain_StreamUsing {
         System.out.println(o);
 
         o = menu.stream()
-                .filter(d->d.getName().equals("aaa"))
+                .filter(d -> d.getName().equals("aaa"))
                 .findAny();
 
         System.out.println(o.isPresent());
@@ -164,10 +164,10 @@ public class TestMain_StreamUsing {
 
         System.out.println("===================");
 
-        Integer sum = someNumbers.stream().reduce(0,(a,b)-> a+b);
+        Integer sum = someNumbers.stream().reduce(0, (a, b) -> a + b);
         System.out.println(sum);
 
-        Integer sum1 = someNumbers.stream().reduce(1,(a,b)-> a*b);
+        Integer sum1 = someNumbers.stream().reduce(1, (a, b) -> a * b);
         System.out.println("乘法: " + sum1);
 
         Optional<Integer> max1 = someNumbers.stream().reduce(Integer::max);
@@ -176,9 +176,8 @@ public class TestMain_StreamUsing {
         Optional<Integer> min1 = someNumbers.stream().reduce(Integer::min);
         System.out.println(min1);
 
-        int count = menu.stream().map(d->1).reduce(0, (a,b)->a+b);
+        int count = menu.stream().map(d -> 1).reduce(0, (a, b) -> a + b);
         System.out.println(count);
-
 
 
     }

@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class Person {
 
-    Person(String name,int age){
+    Person(String name, int age) {
         this.name = name;
         this.age = age;
     }

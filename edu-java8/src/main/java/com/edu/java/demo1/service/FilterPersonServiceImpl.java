@@ -8,11 +8,13 @@ import com.edu.java.demo1.Person;
  * @author hui2.chen
  * @date 2018/11/12
  */
-public class FilterPersonServiceImpl implements IFilterCond{
+public class FilterPersonServiceImpl implements IFilterCond {
 
     private static final int FILTER_AGE_25 = Integer.parseInt("25");
+
     /**
      * 过滤大约25岁的人
+     *
      * @param person
      * @return
      */
