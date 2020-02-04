@@ -40,10 +40,10 @@ public class ZkClientDemo {
         /**
          * 监听节点数据变动
          */
-        zkClient.subscribeDataChanges(path, new IZkDataListener(){
+        zkClient.subscribeDataChanges(path, new IZkDataListener() {
             @Override
             public void handleDataChange(String path, Object data) throws Exception {
-                System.out.println("data [change] path=" + path + ", data="+data);
+                System.out.println("data [change] path=" + path + ", data=" + data);
             }
 
             @Override
@@ -54,7 +54,7 @@ public class ZkClientDemo {
 
         zkClient.writeData(path, "new_date");
         zkClient.delete(path);
-        zkClient.createPersistent(path+"_1", "new_date");
+        zkClient.createPersistent(path + "_1", "new_date");
         try {
             Thread.sleep(Integer.MAX_VALUE);
         } catch (InterruptedException e) {

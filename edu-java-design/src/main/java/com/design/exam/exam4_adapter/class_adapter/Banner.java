@@ -13,11 +13,11 @@ public class Banner {
         this.string = string;
     }
 
-    public void showWithA(){
+    public void showWithA() {
         System.out.println("A_" + string + "_A");
     }
 
-    public void showWithB(){
+    public void showWithB() {
         System.out.println("B_" + string + "_B");
     }
 

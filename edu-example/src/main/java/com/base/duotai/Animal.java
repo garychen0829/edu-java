@@ -8,7 +8,7 @@ package com.base.duotai;
  * @author hui2.chen
  * @date 2019/7/23
  */
-public abstract class Animal implements IWork{
+public abstract class Animal implements IWork {
 
     abstract void eat();
 

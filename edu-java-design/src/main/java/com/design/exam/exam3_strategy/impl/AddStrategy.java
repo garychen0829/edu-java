@@ -10,7 +10,7 @@ public class AddStrategy implements IStrategy {
     @Override
     public int execute(int n, int m) {
 
-        System.out.println( n + " + " + m + " = " + (n + m));
+        System.out.println(n + " + " + m + " = " + (n + m));
 
         return n + m;
     }

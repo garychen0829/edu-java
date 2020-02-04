@@ -28,13 +28,13 @@ public class ProviderReflect {
         ServerSocket serverSocket = new ServerSocket(port);
         while (true) {
             final Socket socket = serverSocket.accept();
-            executorService.execute(()->{
+            executorService.execute(() -> {
                 try {
                     ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
 
                     String methodName = input.readUTF();
 
-                    Object[] args = (Object[])input.readObject();
+                    Object[] args = (Object[]) input.readObject();
 
                     ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
 

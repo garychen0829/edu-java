@@ -26,8 +26,7 @@ public class RxjavaDemo {
 
         Flowable<Integer> flow = Flowable.range(1, 5)
                 .map(v -> v * v)
-                .filter(v -> v % 3 == 0)
-                ;
+                .filter(v -> v % 3 == 0);
 
         flow.subscribe(System.out::println);
 
@@ -42,7 +41,7 @@ public class RxjavaDemo {
                 }
             }
         })
-        .subscribe(System.out::println, Throwable::printStackTrace);
+                .subscribe(System.out::println, Throwable::printStackTrace);
 
     }
 }

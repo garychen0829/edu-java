@@ -32,7 +32,7 @@ public class User implements Serializable {
     }
 
     public String getName() {
-        System.out.println("-------------------"+name);
+        System.out.println("-------------------" + name);
         return name;
     }
 

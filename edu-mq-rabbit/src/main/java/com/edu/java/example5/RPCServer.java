@@ -14,7 +14,7 @@ public class RPCServer {
 
     private static final String RPC_QUEUE_NAME = "rpc_queue";
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         Connection connection = factory.newConnection();
@@ -38,9 +38,9 @@ public class RPCServer {
                 int n = Integer.parseInt(message);
                 System.out.println(" [.] fib(" + message + ")");
                 response += fib(n);
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(" [.] " + e.toString());
-            }finally {
+            } finally {
                 channel.basicPublish("", delivery.getProperties().getReplyTo(), replyProps, response.getBytes("UTF-8"));
                 channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
 
@@ -51,7 +51,8 @@ public class RPCServer {
             }
         };
 
-        channel.basicConsume(RPC_QUEUE_NAME, false, deliverCallback, (consumerTag -> { }));
+        channel.basicConsume(RPC_QUEUE_NAME, false, deliverCallback, (consumerTag -> {
+        }));
         // Wait and be prepared to consume the message from RPC client.
         while (true) {
             synchronized (monitor) {
@@ -63,14 +64,20 @@ public class RPCServer {
             }
         }
     }
+
     /**
      * 斐波那契函数
+     *
      * @param n
      * @return
      */
     private static int fib(int n) {
-        if (n == 0) {return 0;}
-        if (n == 1) {return 1;}
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
         return fib(n - 1) + fib(n - 2);
     }
 }

@@ -16,12 +16,12 @@ import com.rabbitmq.client.ConnectionFactory;
 public class PubTopicChannel {
     private static final String EXCHANGE_NAME = "topic_logs";
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         PubTopicChannel channel = new PubTopicChannel();
         channel.pubTopic();
     }
 
-    public void pubTopic() throws Exception{
+    public void pubTopic() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();

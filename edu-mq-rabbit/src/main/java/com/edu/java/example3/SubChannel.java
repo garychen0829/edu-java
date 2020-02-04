@@ -36,7 +36,8 @@ public class SubChannel {
             System.out.println(" [x] Received '" + message + "'");
         };
 
-        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
+        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
+        });
 
     }
 }

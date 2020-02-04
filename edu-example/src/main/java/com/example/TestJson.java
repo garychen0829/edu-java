@@ -30,15 +30,15 @@ public class TestJson {
         String end = "22:22:22";
         if (curtime.compareTo(start) > 0 && curtime.compareTo(end) < 0) {
             System.out.println(1);
-        }else {
+        } else {
             System.out.println(2);
         }
 
         System.out.println("1".equals(String.valueOf(1L)));
 
         String s = "148";
-        int mod = Integer.parseInt(s.substring(s.length()-2,s.length()));
-        System.out.println(mod%10);
+        int mod = Integer.parseInt(s.substring(s.length() - 2, s.length()));
+        System.out.println(mod % 10);
 
     }
 }

@@ -15,12 +15,14 @@ public interface IRegisterCenter4Provider {
 
     /**
      * 服务端将提供者的信息注册到zk下
+     *
      * @param serviceMetaData
      */
     void registerProvider(List<ProviderService> serviceMetaData);
 
     /**
      * 获取所有注册的服务信息
+     *
      * @return
      */
     Map<String, List<ProviderService>> getProviderServiceMap();

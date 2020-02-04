@@ -16,19 +16,18 @@ public class TestAnimal {
     public static List<Animal> list = new ArrayList<>();
 
     static {
-        Animal dog  = new Dog();
-        Animal cat  = new Cat();
+        Animal dog = new Dog();
+        Animal cat = new Cat();
         list.add(dog);
         list.add(cat);
     }
 
     public static void main(String[] args) {
         String ss = "2019-01-01 11:11:11";
-        System.out.println(ss.subSequence(0,10));
+        System.out.println(ss.subSequence(0, 10));
         TestAnimal animal = new TestAnimal();
 //        animal.invoke("咪咪");
 //        animal.invoke("咪咪");
-
 
 
         animal.invoke1();
@@ -46,8 +45,8 @@ public class TestAnimal {
 
     //主人叫干活了
     public void invoke(String cmd) {
-        Animal cat  = new Cat();
-        Animal dog  = new Dog();
+        Animal cat = new Cat();
+        Animal dog = new Dog();
         if ("咪咪".equals(cmd)) {
             ((Dog) dog).work();
         }

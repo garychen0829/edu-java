@@ -11,11 +11,14 @@ import java.io.IOException;
 public abstract class RealCallback {
     /**
      * 请求成功回调
+     *
      * @param response
      */
     public abstract void onResponse(Call call, Response response);
+
     /**
      * 请求失败回调
+     *
      * @param e
      */
     public abstract void onFailure(Call call, IOException e);

@@ -20,6 +20,7 @@ public class Received {
         received.sub();
 
     }
+
     /**
      * 接收
      */
@@ -31,10 +32,11 @@ public class Received {
         DeliverCallback deliverCallback = new DeliverCallback() {
             @Override
             public void handle(String consumerTag, Delivery delivery) throws IOException {
-                String body = new String(delivery.getBody(),"utf-8");
+                String body = new String(delivery.getBody(), "utf-8");
                 System.out.println(" [x] Received '" + body + "'");
             }
         };
-        channel.basicConsume(QUEUE_NAME,true,deliverCallback,consumerTag->{});
+        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
+        });
     }
 }

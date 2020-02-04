@@ -34,6 +34,7 @@ public class JdOpenApiImpl implements IJdOpenApi {
 
     /**
      * 查询省市区县
+     *
      * @return
      */
     @Override
@@ -67,7 +68,6 @@ public class JdOpenApiImpl implements IJdOpenApi {
         String aesKeyEncrypted = RSA.encrypt(aesKey, JdKeys.jd_public_key);
         request.setKey(aesKeyEncrypted); // 加密后的aesKey
         System.out.println("网关入参组装完毕：" + JSON.toJSONString(request));
-
 
 
         System.out.println("signVal=" + signStr);

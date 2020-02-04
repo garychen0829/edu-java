@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2019/11/14
  */
 @Data
-public class ProviderBean implements FactoryBean,InitializingBean {
+public class ProviderBean implements FactoryBean, InitializingBean {
     /**
      * 服务接口
      */

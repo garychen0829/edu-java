@@ -23,7 +23,7 @@ public class PubChannel {
         channel.pub();
     }
 
-    public void pub() throws Exception{
+    public void pub() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         Connection connection = factory.newConnection();

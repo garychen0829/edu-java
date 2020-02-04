@@ -15,13 +15,14 @@ import com.rabbitmq.client.DeliverCallback;
  */
 public class Recv {
     private static final String TASK_QUEUE_NAME = "hello";
-    public static void main(String[] args) throws Exception{
+
+    public static void main(String[] args) throws Exception {
         Recv recv = new Recv();
         recv.received();
     }
 
 
-    public void received() throws Exception{
+    public void received() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         Connection connection = factory.newConnection();
@@ -39,11 +40,12 @@ public class Recv {
         };
         // acknowledgment is covered below
         boolean autoAck = true;
-        channel.basicConsume(TASK_QUEUE_NAME, autoAck, deliverCallback, consumerTag -> { });
+        channel.basicConsume(TASK_QUEUE_NAME, autoAck, deliverCallback, consumerTag -> {
+        });
     }
 
-    private void doWork(String task){
-        for (char ch: task.toCharArray()) {
+    private void doWork(String task) {
+        for (char ch : task.toCharArray()) {
             if (ch == '.') {
                 try {
                     Thread.sleep(1000);

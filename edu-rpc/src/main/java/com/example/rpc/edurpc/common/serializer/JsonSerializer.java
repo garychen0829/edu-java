@@ -76,7 +76,7 @@ public class JsonSerializer implements ISerializer {
 
         byte[] userByte = new JsonSerializer().serialize(u);
         User user = new JsonSerializer().deserialize(userByte, User.class);
-        System.out.println(user.getEmail() + " : " + user.getName() + " : " );
+        System.out.println(user.getEmail() + " : " + user.getName() + " : ");
         System.out.println(new String(new JsonSerializer().serialize(u.getUserList())));
         System.out.println(new String(new JsonSerializer().serialize(u.getUserMap())));
 

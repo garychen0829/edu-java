@@ -16,11 +16,12 @@ public class Recipes_NoLock {
 
     /**
      * 一个典型时间戳生成的并发问题
+     *
      * @param args
      */
     public static void main(String[] args) {
         final CountDownLatch latch = new CountDownLatch(1);
-        for (int i = 0; i< 20; i++) {
+        for (int i = 0; i < 20; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {

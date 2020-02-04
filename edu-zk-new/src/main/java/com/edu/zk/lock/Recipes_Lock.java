@@ -22,31 +22,34 @@ public class Recipes_Lock {
     /**
      * 1. 启动本机zk服务; sh bin/zkServer.sh start
      * 2. 打开本机客户端; sh bin/zkCli.sh -server 127.0.0.1:2181
+     *
      * @param args
      */
     public static final String lock_path = "/curator_recipes_lock_path";
     public static CuratorFramework client = CuratorFrameworkFactory.builder()
             .connectString("127.0.0.1:2181")
-            .retryPolicy(new ExponentialBackoffRetry(1000,2)).build();
+            .retryPolicy(new ExponentialBackoffRetry(1000, 2)).build();
 
     public static void main(String[] args) {
         client.start();
         final InterProcessMutex lock = new InterProcessMutex(client, lock_path);
         final CountDownLatch down = new CountDownLatch(1);
         for (int i = 0; i < 30; i++) {
-            new Thread(()->{
+            new Thread(() -> {
                 try {
                     down.await();
                     lock.acquire();
 
-                } catch (Exception e) {}
+                } catch (Exception e) {
+                }
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss|SSS");
                 String orderNo = sdf.format(new Date());
                 System.out.println("生成的订单号是:" + orderNo);
 
                 try {
                     lock.release();
-                } catch (Exception e) {}
+                } catch (Exception e) {
+                }
             }).start();
         }
         down.countDown();

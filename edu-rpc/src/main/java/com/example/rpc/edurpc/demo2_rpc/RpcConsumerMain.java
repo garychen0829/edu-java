@@ -14,7 +14,7 @@ import com.example.rpc.edurpc.demo2_rpc.service.HelloService;
 public class RpcConsumerMain {
 
     public static void main(String[] args) throws InterruptedException {
-        HelloService service = ConsumerProxy.consume(HelloService.class,"127.0.0.1",8803);
+        HelloService service = ConsumerProxy.consume(HelloService.class, "127.0.0.1", 8803);
 
         for (int i = 0; i < 100; i++) {
             String str = service.sayHello("hello: " + i);

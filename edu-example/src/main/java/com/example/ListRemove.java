@@ -19,7 +19,7 @@ public class ListRemove {
 
     public static void main(String[] args) {
 
-        String authDataJson="{\"source\":\"JF_APP_CASH_LOAN\",\"authTime\":\"20181219184113\",\"authChannel\":\"魔盒\",\"comeFromAuth\":false,\"mobile\":\"15109683128\",\"facilitator\":2,\"taskId\":\"\"null\"\",\"status\":3}";
+        String authDataJson = "{\"source\":\"JF_APP_CASH_LOAN\",\"authTime\":\"20181219184113\",\"authChannel\":\"魔盒\",\"comeFromAuth\":false,\"mobile\":\"15109683128\",\"facilitator\":2,\"taskId\":\"\"null\"\",\"status\":3}";
         Map map = JSONObject.parseObject(authDataJson, Map.class);
         System.out.println(JSONObject.toJSONString(map));
 
@@ -37,7 +37,7 @@ public class ListRemove {
 //            }
 //        }
 
-        Iterator<String> iterator =  list.iterator();
+        Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
             String value = iterator.next();
             if (value.equals("123")) {

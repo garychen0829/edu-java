@@ -9,9 +9,12 @@ package com.design.demo.demo1;
  * @date 2018/12/5
  */
 public class DefaultFactory extends AbstractStategyFactory {
-    private DefaultFactory(){}
+    private DefaultFactory() {
+    }
+
     static DefaultFactory instance;
-    public static AbstractStategyFactory getInstance(){
+
+    public static AbstractStategyFactory getInstance() {
         if (null == instance) {
             instance = new DefaultFactory();
         }
@@ -22,6 +25,7 @@ public class DefaultFactory extends AbstractStategyFactory {
     public MessageStrategy createStategy(final MessageBody mb) {
         return new MessageStrategy() {
             MessageBody body = mb;
+
             @Override
             public void sendMessage() {
                 Object obj = body.getPayload();

@@ -58,8 +58,8 @@ public class TestExcelReader {
             System.out.println("总本金: " + summaryCapital);
             System.out.println("总利息: " + summaryInterest);
             System.out.println("时间:" + stopWatch.getTotalTimeSeconds());
-        }catch (Exception e){
-        }finally {
+        } catch (Exception e) {
+        } finally {
             if (null != wk) {
                 wk.close();
             }

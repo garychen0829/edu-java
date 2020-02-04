@@ -14,7 +14,7 @@ public class Cat extends Animal {
         System.out.println("吃鱼");
     }
 
-    public boolean work(){
+    public boolean work() {
         System.out.println("抓老鼠");
         return false;
     }

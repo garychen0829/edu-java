@@ -11,11 +11,11 @@ package com.design.demo.demo1;
 public class MessageBody {
     Object payload;
 
-    public void configure(Object payload){
+    public void configure(Object payload) {
         this.payload = payload;
     }
 
-    public void send(MessageStrategy messageStrategy){
+    public void send(MessageStrategy messageStrategy) {
         messageStrategy.sendMessage();
     }
 

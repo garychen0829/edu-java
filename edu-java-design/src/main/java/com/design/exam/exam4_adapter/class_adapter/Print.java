@@ -8,6 +8,7 @@ package com.design.exam.exam4_adapter.class_adapter;
  */
 public interface Print {
     public abstract void printA();
+
     public abstract void printB();
 
 }

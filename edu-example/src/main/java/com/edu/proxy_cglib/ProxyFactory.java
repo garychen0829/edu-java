@@ -42,7 +42,7 @@ public class ProxyFactory implements MethodInterceptor {
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("开始事务");
 
-        Object obj = method.invoke(target,objects);
+        Object obj = method.invoke(target, objects);
 
         System.out.println("提交事务");
 

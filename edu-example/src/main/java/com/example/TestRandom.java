@@ -15,8 +15,8 @@ import java.util.*;
 public class TestRandom {
     public static void main(String[] args) {
         int randomPerson = (new Random()).nextInt(6500) + 9000;
-        int randomWaitTime = randomPerson/100;
-        int waitTime = (int)Math.floor(randomWaitTime);
+        int randomWaitTime = randomPerson / 100;
+        int waitTime = (int) Math.floor(randomWaitTime);
         int randomSpentTime = (new Random()).nextInt(20) + 10;
         int spentTime = waitTime - randomSpentTime;
         Map<String, Object> result = new HashMap<>();
@@ -31,8 +31,8 @@ public class TestRandom {
         System.out.println(randomPerson2);
 
 
-        for (int i =0; i < 9999; i++) {
-            int num = get_random(6500,15000);
+        for (int i = 0; i < 9999; i++) {
+            int num = get_random(6500, 15000);
 
             if (num > 15000) {
                 System.out.println("error");
@@ -43,11 +43,11 @@ public class TestRandom {
 
     }
 
-    public static  int get_random(int start,int end){
-        return (int)(Math.random()*(end-start+1)+start);
+    public static int get_random(int start, int end) {
+        return (int) (Math.random() * (end - start + 1) + start);
     }
 
-    public static void addEle(List list){
-        list.add(String.valueOf(list.size()+1));
+    public static void addEle(List list) {
+        list.add(String.valueOf(list.size() + 1));
     }
 }

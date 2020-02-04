@@ -15,7 +15,7 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 public class Recipes_DisAtomicInt {
     static CuratorFramework clent = CuratorFrameworkFactory.builder()
             .connectString("127.0.0.1:2181")
-            .retryPolicy(new ExponentialBackoffRetry(1000,3)).build();
+            .retryPolicy(new ExponentialBackoffRetry(1000, 3)).build();
 
     public static void main(String[] args) {
 

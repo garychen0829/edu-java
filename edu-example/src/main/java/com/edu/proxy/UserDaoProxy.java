@@ -8,7 +8,7 @@ package com.edu.proxy;
  * @author hui2.chen
  * @date 2019/3/20
  */
-public class UserDaoProxy implements IUserDao{
+public class UserDaoProxy implements IUserDao {
 
     private IUserDao target;
 
@@ -20,9 +20,9 @@ public class UserDaoProxy implements IUserDao{
     @Override
     public int save() {
         System.out.println("开始事务...");
-        try{
+        try {
             target.save();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return 0;
         }
