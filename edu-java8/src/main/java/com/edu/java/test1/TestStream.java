@@ -39,6 +39,14 @@ public class TestStream {
             new Dish("salmon", false, 450, Dish.Type.FISH));
 
 
+    @Test
+    public void test() {
+        List<String> dishNames = menu.stream()
+                .map(Dish::getName)
+                .collect(Collectors.toList());
+        System.out.println(JSONObject.toJSONString(dishNames));
+    }
+
     /**
      * 􏿕􏿖选出高热量的事务 > 300
      */
@@ -153,10 +161,11 @@ public class TestStream {
 
     @Test
     public void testArraysMap() {
-        String[] arrays = {"hello world!"};
+        String[] arrays = {"hello", "world!"};
 
-        List<String[]> collect = Arrays.stream(arrays)
+        List<String> collect = Arrays.stream(arrays)
                 .map(i -> i.split(""))
+                .flatMap(Arrays::stream)
                 .distinct()
                 .collect(Collectors.toList());
 
@@ -189,6 +198,29 @@ public class TestStream {
                         )
                         .collect(Collectors.toList());
     }
+
+    @Test
+    public void sumCalories() {
+        Optional<Integer> reduce = menu.stream().map(Dish::getCalories).reduce((a, b) -> a + b);
+        Optional<Integer> reduce2 = menu.stream().map(Dish::getCalories).reduce(Integer::sum);
+
+        System.out.println(reduce.orElse(0));
+        System.out.println(reduce2.orElse(0));
+
+        Optional<Integer> reduce3 = menu.stream().map(Dish::getCalories).map(i -> Integer.valueOf(String.valueOf(i).substring(0, 1))).reduce((a, b) -> a * b);
+        System.out.println(reduce3.orElse(0));
+    }
+
+    @Test
+    public void maxMinVal() {
+        Optional<Integer> reduce = menu.stream().map(d -> 1).reduce(Integer::sum);
+        System.out.println(reduce.orElse(0));
+
+        long count = menu.stream().count();
+        System.out.println(count);
+    }
+
+
 
     public static void main(String[] args) {
         Map<String, Object> map = new HashMap<>();
