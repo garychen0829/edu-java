@@ -2,7 +2,8 @@ package com.queue.demo1;
 
 import java.util.concurrent.DelayQueue;
 
-import static com.ch.spring.boot2.queue.demo1.TimeUtil.timeUtil;
+import static com.queue.demo1.TimeUtil.timeUtil;
+
 
 public class DelayQueueDemo {
 

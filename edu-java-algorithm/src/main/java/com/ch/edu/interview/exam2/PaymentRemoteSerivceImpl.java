@@ -14,7 +14,6 @@ public class PaymentRemoteSerivceImpl implements PaymentRemoteSerivce {
         }
     }
 
-    @Override
     public ConsultResult isEnabled(String paymentType) {
         try {
             //模拟查询耗时
