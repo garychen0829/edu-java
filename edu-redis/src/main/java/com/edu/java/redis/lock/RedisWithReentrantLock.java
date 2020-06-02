@@ -1,11 +1,18 @@
-package com.edu.java;
+package com.edu.java.redis.lock;
 
-import com.alibaba.fastjson.JSONObject;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.params.SetParams;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 1. 分布式锁
+ *
+ * set, setnx(set if not exists), expire, del, get
+ *
+ * @author chenh
+ */
 public class RedisWithReentrantLock {
 
     private static final int EXPIRE_TIME = 5;
@@ -20,9 +27,11 @@ public class RedisWithReentrantLock {
     private boolean _lock(String key) {
         Long nx = jedis.setnx(key, "");
         jedis.expire(key, 5);
-//        String setnx = jedis.set(key, "", SetParams.setParams().nx().ex(3));
-        System.out.println(nx);
         return nx != null;
+    }
+
+    private boolean _lock2(String key) {
+        return jedis.set(key, "", SetParams.setParams().nx().ex(EXPIRE_TIME)) != null;
     }
 
     private void _unlock(String key) {
