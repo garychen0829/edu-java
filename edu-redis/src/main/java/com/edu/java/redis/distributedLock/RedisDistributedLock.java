@@ -28,7 +28,7 @@ public class RedisDistributedLock implements DistributedLock {
     /**
      * 锁的超时时间 10s
      */
-    int expireTime = 10 * 1000;
+    int expireTime = 10;
 
     /**
      * 锁等待，防止线程饥饿
