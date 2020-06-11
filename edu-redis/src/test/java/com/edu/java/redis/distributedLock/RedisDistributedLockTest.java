@@ -2,6 +2,10 @@ package com.edu.java.redis.distributedLock;
 
 import redis.clients.jedis.Jedis;
 
+/**
+ * 下面就以秒杀库存数量为场景，测试下上面实现的分布式锁的效果
+ * 单元测试时 测试redis分布式锁
+ */
 public class RedisDistributedLockTest {
 
     static int n = 500;
