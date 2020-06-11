@@ -17,7 +17,7 @@ public class RedisDistributedLockTest {
                 Jedis conn = new Jedis("127.0.0.1",6379);
                 lock = new RedisDistributedLock(conn, "test1");
                 unLockIdentify = lock.acquire();
-                System.out.println(Thread.currentThread().getName() + "正在运行");
+//                System.out.println(Thread.currentThread().getName() + "正在运行");
                 secskill();
             } finally {
                 if (lock != null) {
@@ -26,7 +26,7 @@ public class RedisDistributedLockTest {
             }
         };
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Thread t = new Thread(runnable);
             t.start();
         }

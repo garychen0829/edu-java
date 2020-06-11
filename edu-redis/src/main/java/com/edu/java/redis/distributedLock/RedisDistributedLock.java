@@ -74,6 +74,11 @@ public class RedisDistributedLock implements DistributedLock {
         this.expireTime = expireTime;
     }
 
+    /**
+     * 获取锁
+     *
+     * @return
+     */
     @Override
     public String acquire() {
         try {
@@ -99,6 +104,12 @@ public class RedisDistributedLock implements DistributedLock {
         return null;
     }
 
+    /**
+     * 释放锁
+     *
+     * @param identify
+     * @return
+     */
     @Override
     public boolean release(String identify) {
         if (identify == null) {
