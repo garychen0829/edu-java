@@ -34,6 +34,11 @@ public class RedisDelayingQueue<T> {
         this.queueKey = queueKey;
     }
 
+    /**
+     * 入队列
+     *
+     * @param msg
+     */
     public void delay(T msg) {
         TaskItem task = new TaskItem<T>();
         task.id = UUID.randomUUID().toString();
@@ -42,6 +47,9 @@ public class RedisDelayingQueue<T> {
         jedis.zadd(queueKey, System.currentTimeMillis() + 5000, s);
     }
 
+    /**
+     * 遍历, 出队列
+     */
     public void loop() {
         while (!Thread.interrupted()) {
             Set<String> values = jedis.zrangeByScore(queueKey, 0, System.currentTimeMillis(), 0, 1);
@@ -53,9 +61,9 @@ public class RedisDelayingQueue<T> {
                 }
                 continue;
             }
+
             String s = values.iterator().next();
             if (jedis.zrem(queueKey, s) > 0) {
-
                 TaskItem<T> task = JSON.parseObject(s, TaskType);
                 this.handleMsg(task.msg);
             }

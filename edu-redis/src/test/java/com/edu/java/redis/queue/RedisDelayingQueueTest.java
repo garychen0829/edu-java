@@ -31,7 +31,7 @@ public class RedisDelayingQueueTest {
 
         try {
             producer.join();
-            Thread.sleep(6000);
+            Thread.sleep(10 * 1000);
             consumer.interrupt();
             consumer.join();
         } catch (InterruptedException e) {
