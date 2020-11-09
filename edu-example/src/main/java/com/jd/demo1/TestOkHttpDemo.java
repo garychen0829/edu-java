@@ -42,7 +42,7 @@ public class TestOkHttpDemo {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                System.out.println("error");
+                System.out.println("error"+e);
             }
         });
     }
