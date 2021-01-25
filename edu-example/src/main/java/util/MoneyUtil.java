@@ -56,7 +56,7 @@ public final class MoneyUtil {
      * @param props
      */
     @SuppressWarnings("unchecked")
-    public static final void fenToYuan(Map<String, Object> map, String... props) {
+//    public static final void fenToYuan(Map<String, Object> map, String... props) {
 //		if (MapUtil.isEmpty(map) || ArrayUtil.isEmpty(props)) {
 //			return;
 //		}
@@ -91,7 +91,7 @@ public final class MoneyUtil {
 //				map.put(entry.getKey(), list);
 //			}
 //		}
-    }
+//    }
 
     /**
      * 分转元
@@ -170,4 +170,5 @@ public final class MoneyUtil {
         }
         return ret;
     }
+
 }
