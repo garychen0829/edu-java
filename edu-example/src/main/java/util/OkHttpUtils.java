@@ -97,6 +97,20 @@ public class OkHttpUtils {
         deliveryResult(realCallback, okHttpClient.newCall(request));
     }
 
+    /**
+     * 同步请求
+     *
+     * @param url
+     * @param requestBody
+     * @return
+     * @throws Exception
+     */
+    private Response postRequestSync(String url, RequestBody requestBody) throws Exception {
+        Request request = new Request.Builder().url(url).post(requestBody).build();
+        Call call = okHttpClient.newCall(request);
+        return call.execute();
+    }
+
 
     /**
      * 处理请求结果的回调：主线程切换
@@ -161,5 +175,17 @@ public class OkHttpUtils {
      */
     public void post(String url, String body, final RealCallback realCallback) {
         postRequest(url, RequestBody.create(JSON, body), realCallback);
+    }
+
+    /**
+     * post同步请求
+     *
+     * @param url
+     * @param body
+     * @return
+     * @throws Exception
+     */
+    public Response postSync(String url, String body) throws Exception {
+        return postRequestSync(url, RequestBody.create(JSON, body));
     }
 }
