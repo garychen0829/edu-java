@@ -111,6 +111,12 @@ public class OkHttpUtils {
         return call.execute();
     }
 
+    private Response postRequestSync(String url, Headers headers, RequestBody requestBody) throws Exception {
+        Request request = new Request.Builder().url(url).headers(headers).post(requestBody).build();
+        Call call = okHttpClient.newCall(request);
+        return call.execute();
+    }
+
 
     /**
      * 处理请求结果的回调：主线程切换
@@ -187,5 +193,9 @@ public class OkHttpUtils {
      */
     public Response postSync(String url, String body) throws Exception {
         return postRequestSync(url, RequestBody.create(JSON, body));
+    }
+
+    public Response postSync(String url, Headers.Builder headers, String body) throws Exception {
+        return postRequestSync(url, headers.build(), RequestBody.create(JSON, body));
     }
 }

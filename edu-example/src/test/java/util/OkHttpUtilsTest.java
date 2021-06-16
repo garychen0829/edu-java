@@ -3,6 +3,7 @@ package util;
 import com.alibaba.fastjson.JSON;
 import junit.framework.TestCase;
 import okhttp3.Call;
+import okhttp3.Headers;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
 import org.junit.Test;
@@ -37,10 +38,30 @@ public class OkHttpUtilsTest extends TestCase {
     }
 
     @Test
-    public void test_sync() {
+    public void test_sync_body() {
         OkHttpUtils okHttpUtils = OkHttpUtils.getInstance();
         try {
             Response response = okHttpUtils.postSync("https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ID&corpsecret=SECRET","{}");
+            System.out.println("response=="+response.body().string());
+            System.out.println(JSON.toJSONString(response));
+            System.out.println(JSON.toJSONString(response.isSuccessful()));
+            System.out.println(JSON.toJSONString(response.isSuccessful()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test_sync_head_body() {
+        OkHttpUtils okHttpUtils = OkHttpUtils.getInstance();
+        try {
+            String url = "http://localhost:8080/main/head";
+            Headers.Builder headBuilder = new Headers.Builder();
+            headBuilder.set("XX-HEAD","head1");
+            headBuilder.set("XX-HEAD-APP","app");
+
+            String body = "{\"key1\":\"hello body\"}";
+            Response response = okHttpUtils.postSync(url,headBuilder,body);
             System.out.println("response=="+response.body().string());
             System.out.println(JSON.toJSONString(response));
             System.out.println(JSON.toJSONString(response.isSuccessful()));
