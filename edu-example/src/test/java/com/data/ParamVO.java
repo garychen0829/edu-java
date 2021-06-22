@@ -1,4 +1,4 @@
-package com.test;
+package com.data;
 
 public class ParamVO {
     private Integer value;

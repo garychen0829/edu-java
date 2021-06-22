@@ -1,4 +1,4 @@
-package com.test;
+package com.data;
 
 import com.google.gson.Gson;
 import org.junit.Test;
@@ -188,8 +188,6 @@ public class TestMain {
         paramVO = new ParamVO("止园新村", 2);
         data.add(paramVO);
         paramVO = new ParamVO("存仁里", 1);
-        data.add(paramVO);
-        paramVO = new ParamVO("总计", 67);
         data.add(paramVO);
 
         System.out.println("data:" + gson.toJson(data)
@@ -741,9 +739,6 @@ public class TestMain {
         param3VO = new Param3VO("宝昌路600弄", "6-25天", 2);
         data.add(param3VO);
         System.out.println("data:" + gson.toJson(data));
-
-        Param3VO a = new Param3VO();
-        //String[] str = new String[][]{};
 
 //        {"宝昌路600弄", 4, 2},
 //        {"宝华里", "0", "1"},

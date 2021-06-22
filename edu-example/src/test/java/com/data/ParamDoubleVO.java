@@ -1,4 +1,4 @@
-package com.test;
+package com.data;
 
 public class ParamDoubleVO {
     private Double value = 0.00d;
