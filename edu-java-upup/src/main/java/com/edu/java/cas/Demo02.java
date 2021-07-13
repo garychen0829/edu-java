@@ -25,6 +25,8 @@ public class Demo02 {
     }
 
     /**
+     * cas
+     *
      * @param exceptCount 期望值
      * @param newCount    需要给count赋值的新值
      * @return
@@ -82,7 +84,7 @@ public class Demo02 {
         latch.await();
         long endTime = System.currentTimeMillis();
 
-        System.out.println(Thread.currentThread().getName() + ",耗时： " + (endTime - startTime) + "count=" + count);
+        System.out.println(Thread.currentThread().getName() + ",耗时： " + (endTime - startTime) + ",count=" + count);
     }
 
 }

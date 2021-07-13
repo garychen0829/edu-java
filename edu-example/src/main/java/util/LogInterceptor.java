@@ -26,7 +26,6 @@ public class LogInterceptor implements Interceptor {
         long duration = endTime - startTime;
         okhttp3.MediaType mediaType = response.body().contentType();
         String content = response.body().string();
-        System.out.println();
         System.out.println("----------Start----------------");
         System.out.println("| " + request.toString());
         String method = request.method();
