@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class OkHttpUtilsTest extends TestCase {
+public class OkHttpUtilsTest {
 
     /**
      * 异步
@@ -62,6 +62,10 @@ public class OkHttpUtilsTest extends TestCase {
 
             String body = "{\"key1\":\"hello body\"}";
             Response response = okHttpUtils.postSync(url,headBuilder,body);
+
+            if (response.code() == 200) {
+
+            }
             System.out.println("response=="+response.body().string());
             System.out.println(JSON.toJSONString(response));
             System.out.println(JSON.toJSONString(response.isSuccessful()));

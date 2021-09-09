@@ -21,7 +21,7 @@ public class DelayedService {
             delayQueue.put(new DelayedItem("test",invoke, 10, TimeUnit.SECONDS));
 
         }
-
+        System.out.println("queue size() =>" + delayQueue.size());
         for (int i = 0; i < 2; i++) {
             DelayedItem d = delayQueue.take();
 

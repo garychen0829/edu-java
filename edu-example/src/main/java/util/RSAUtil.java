@@ -11,7 +11,7 @@ public class RSAUtil {
     private static final String MD5_WITH_RSA = "MD5withRSA";
     private static final String RSA_ALGORTHM = "RSA";
 
-    public RSAUtil() {
+    private RSAUtil() {
     }
 
     public static String[] generateKeyPair(int keySize) throws Exception {
@@ -90,6 +90,19 @@ public class RSAUtil {
         PrivateKey key = keyFactory.generatePrivate(pkcs8EncodedKeySpec);
         cipher.init(2, key);
         return new String(cipher.doFinal(Base64.decodeBase64(data)));
+    }
+
+    public static void main(String[] args) throws Exception {
+        String[] keys = RSAUtil.generateKeyPair(1024);
+
+        System.out.println();
+        System.out.println("-------------------------");
+        System.out.println("privateKey:");
+        System.out.println(keys[0]);
+        System.out.println("-------------------------");
+        System.out.println("publicKey:");
+        System.out.println(keys[1]);
+        System.out.println("-------------------------");
     }
 
 }
